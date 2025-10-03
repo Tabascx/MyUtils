@@ -1,13 +1,13 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
  */
 import com.example.myutils.MyUtils;
-
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MyUtilsTest {
+
+    // Tests originales
 
     @Test
     void testEsTraspas() {
@@ -36,5 +36,35 @@ public class MyUtilsTest {
     @Test
     void testFactorialNegatiu() {
         assertThrows(IllegalArgumentException.class, () -> MyUtils.factorial(-1));
+    }
+
+    // Tests nuevos
+
+    @Test
+    void testInvertirCadena() {
+        assertEquals("aloH", MyUtils.invertirCadena("Hola"));
+        assertEquals("", MyUtils.invertirCadena(""));
+        assertEquals("a", MyUtils.invertirCadena("a"));
+    }
+
+    @Test
+    void testExtreureMaxim() {
+        assertEquals(9, MyUtils.extreureMaxim(new int[]{3,7,1,9}));
+        assertEquals(-1, MyUtils.extreureMaxim(new int[]{-5,-1,-10}));
+        assertThrows(IllegalArgumentException.class, () -> MyUtils.extreureMaxim(new int[]{}));
+    }
+
+    @Test
+    void testSumarDigits() {
+        assertEquals(10, MyUtils.sumarDigits(1234));
+        assertEquals(0, MyUtils.sumarDigits(0));
+        assertEquals(6, MyUtils.sumarDigits(-123));
+    }
+
+    @Test
+    void testProperPrimer() {
+        assertEquals(23, MyUtils.properPrimer(20));
+        assertEquals(11, MyUtils.properPrimer(10));
+        assertTrue(MyUtils.esPrimer(MyUtils.properPrimer(50)));
     }
 }
