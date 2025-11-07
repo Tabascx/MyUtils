@@ -38,7 +38,7 @@ public class MyUtilsTest {
         assertThrows(IllegalArgumentException.class, () -> MyUtils.factorial(-1));
     }
 
-    // Tests nuevos
+    // Tests nuevos. Comentario modificado por el profe para que se dispare GitHub Actions.
 
     @Test
     void testInvertirCadena() {
